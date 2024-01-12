@@ -1,47 +1,23 @@
-import './App.css';
-import elephant from "./images/elephant.jpeg";
+import "./App.css";
 
-const imageData = ()=>{
-  let data = [
-    {
-      id:1,
-      img:elephant
-    },
-    {
-      id:2,
-      img:elephant
-    },
-    {
-      id:3,
-      img:elephant
-    },
-    {
-      id:4,
-      img:elephant
-    }
-  ]
-  return data;
-}
-
-function App() {
-  const imgData= imageData();
-  return(
+function App(props) {
+  const imgData = props.Data;
+  return (
     <div>
-      <h1>Kalvium gallary</h1>
+      <h1>Kalvium gallary(App)</h1>
       <div className="row">
-      {
-      imgData.map((image)=>{
-      return(
-    <div className="column"key={image.id}>
-      <img src={image.img} alt="" />
+        {imgData.map((image) => {
+          return (
+            <div className="column" key={image.id}>
+              <img src={image.img} alt="" />
+            </div>
+          );
+          // code here
+        })}
+        ;
+      </div>
     </div>
-    
-  )
-  // code here
-})};
-</div>
-</div>
-);
+  );
 }
 
 export default App;
